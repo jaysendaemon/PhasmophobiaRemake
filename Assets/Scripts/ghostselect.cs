@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GhostRoom : MonoBehaviour
@@ -5,6 +6,7 @@ public class GhostRoom : MonoBehaviour
     public GameObject[] EMFLights;
     public AudioSource sfx;
     // Start is called before the first frame update
+    public int ghostIndex = 0;
     public bool ghost1 = true;
     public bool ghost2 = false;
     public bool ghost3 = false;
@@ -16,6 +18,8 @@ public class GhostRoom : MonoBehaviour
     void Start()
     {
         ghostAtts();
+        ghostSelect();
+
 
     }
 
@@ -23,6 +27,23 @@ public class GhostRoom : MonoBehaviour
     void Update()
     {
 
+    }
+
+    void ghostSelect()
+    {
+
+        if (ghostIndex == 1)
+        {
+            ghost1 = true;
+        }
+        if (ghostIndex == 2)
+        {
+            ghost1 = true;
+        }
+        if (ghostIndex == 3)
+        {
+            ghost1 = true;
+        }
     }
 
     void ghostAtts()

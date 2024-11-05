@@ -24,7 +24,13 @@ public class PHOTOCAMERA : MonoBehaviour
         money += IncreaseAmount;
         Debug.Log("Money increased to " + money);
     }
-
+    void UpdateMoneyText()
+    {
+        if (moneyText != null)
+        {
+            moneyText.text = "Money: $" + money;
+        }
+    }
     void TakePhoto()
     {
         Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
@@ -45,11 +51,5 @@ public class PHOTOCAMERA : MonoBehaviour
     }
 
    
-    void UpdateMoneyText()
-    {
-        if (moneyText != null)
-        {
-            moneyText.text = "Money: $" + money;
-        }
-    }
+    
 }
