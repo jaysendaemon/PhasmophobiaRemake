@@ -19,6 +19,11 @@ public class PHOTOCAMERA : MonoBehaviour
             UpdateMoneyText();
         }
     }
+    void IncreaseMoney(int IncreaseAmount)
+    {
+        money += IncreaseAmount;
+        Debug.Log("Money increased to " + money);
+    }
 
     void TakePhoto()
     {
@@ -33,17 +38,13 @@ public class PHOTOCAMERA : MonoBehaviour
             }
             if (hit.collider.CompareTag("Ghost"))
             {
-                IncreaseMoney(100);
+                IncreaseMoney(40);
                 Debug.Log(money);
             }
         }
     }
 
-    void IncreaseMoney(int IncreaseAmount)
-    {
-        money += IncreaseAmount; 
-        Debug.Log("Money increased to " + money);
-    }
+   
     void UpdateMoneyText()
     {
         if (moneyText != null)
